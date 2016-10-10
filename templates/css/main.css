@@ -1,0 +1,49 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	text-align:center;
+}
+
+form {
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+}
+legend {
+	font-size:large;
+}
+input {
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.submit_button {
+	margin-top:10px;
+	font-family: 'Roboto', sans-serif;
+}
+#container {
+	width:100%;
+}
+#interests, #profiles {
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding:5px;
+	border:2px solid gray;
+}
+
+#profile-view {
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding:5px;
+	border:2px solid gray;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="/templates/css/main.css">
+		<title>Academia: Edit Profile</title>	
+	</head>
+	<body>
+		<form method="POST" action="{{ edit_url }}">
+			<input type="hidden" name="key" value="{{ profile.key.urlsafe() }}">
+			<fieldset>
+				<legend>Update Profile</legend>
+				<strong>Email:</strong> {{ profile.email }} <input type="email" name="email"><br />
+				<strong>First Name:</strong> {{ profile.firstname }} <input type="text" name="first-name"><br />
+				<strong>Last Name:</strong> {{ profile.lastname }} <input type="text" name="last-name"><br />
+				<strong>Gender:</strong> {{ profile.gender }}<br />
+				<input type="radio" name="gender" id="gender-male" value="male" /> <label for="genderMale">Male</label><br />
+				<input type="radio" name="gender" id="gender-female" value="female" /> <label for="genderFemale">Female</label><br />
+				<input type="radio" name="gender" id="gender-other" value="other" /> <label for="genderOther">Other</label><br />
+				<strong>Age:</strong> {{ profile.age }} <input type="number" name="age"><br />
+				<input type="submit" value="Submit" class="submit_button">
+				<input type="reset" value="Clear All" class="submit_button">
+			</fieldset>
+			<input type="submit" value="Update">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello</title>
+</head>
+<body>
+	<div id="container">
+	<h1>Pokemon GO</h1>
+	<form action="/" method="post">
+		<input type="hidden" name="action" value="userin">
+		<fieldset>
+			<h2>Register Here</h2>
+			<h3>Username:</h3> <input type="text" name="userID" required="true"><br />
+			<h3>City:</h3> <input type="text" name="city" required="true"><br />
+			<h3>State:</h3> <input type="text" name="state" required="true"><br />
+			<h3>Team:</h3><br />
+			<input type="radio" name="team" id="instinct" value="instinct" /> <label for="instinct">Instinct</label><br />
+			<input type="radio" name="team" id="mystic" value="mystic" /> <label for="mystic">Mystic</label><br />
+			<input type="radio" name="team" id="valor" value="valor" /> <label for="valor">Valor</label><br />
+			<h3>Age:</h3> <input type="number" name="age" required="true"><br />
+			<input type="checkbox" name="agree" required="true"> Are you playing for fun?<br />
+			<input type="submit" value="Submit" class="submit_button">
+			<input type="reset" value="Clear All" class="submit_button">
+		</fieldset>
+	</form>
+	<form action="/" method="post">
+		<fieldset>
+		<legend>Add Favorite Pokemon</legend>
+			<input type="hidden" name="action" value="favorite">
+			<h3>Name: </h3><br />
+			<input type="text" name="pokemon" required="true">
+			<input type="submit" value="Add" class="submit_button">
+		</fieldset>
+	</form>
+	<section>
+		<h2>Academic Interests</h2>
+			<div id="interests">
+			{% for ai in edinterests %}
+			| {{ ai.name }} | 
+			{% endfor %}
+			</div>
+	</section>
+	<section>
+		<h2><a href="view.html">View Profiles</a></h2>
+		<div id="profiles">
+		{% for name in userID %}
+		<a href="/edit?key={{ name.key }}&type=profile">{{ name.userID }}</a>
+		{% endfor %}
+		</div>
+	</section>
+	{% if message %}
+	<section>
+		<h3>Result</h3>
+		<p>{{ message }}</p>
+	</section>
+	{% endif %}
+	</div>
+</body>
+</html>

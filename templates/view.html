@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/templates/css/main.css">
+	<title>Acamedia</title>
+</head>
+<body>
+	<div id="container">
+		<h1>View Profiles</h1>
+		<div id="profile-view">
+		{% for e in email %}
+		<strong>Email:</strong> {{ e.email }}<br />
+		{% endfor %}
+		{% for f in firstname %}
+		First Name: {{ f.firstname }}<br />
+		{% endfor %}
+		{% for l in lastname %}
+		Last Name: {{ l.lastname }}<br />
+		{% endfor %}
+		{% for g in gender %}
+		Gender: {{ g.gender }}<br />
+		{% endfor %}
+		{% for a in age %}
+		Age: {{ a.age }}<br />
+		{% endfor %}
+		</p>
+		
+		</div>
+	</div>
+</body>
+</html>
