@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/templates/css/main.css">
-	<title>Acamedia</title>
+	<title>Users</title>
 </head>
 <body>
 	<div id="container">
 		<h1>View Profiles</h1>
 		<div id="profile-view">
-		{% for e in email %}
-		<strong>Email:</strong> {{ e.email }}<br />
+		{% for u in userID %}
+		<h3>userID:</h3> {{ u.userID }}<br />
 		{% endfor %}
-		{% for f in firstname %}
-		First Name: {{ f.firstname }}<br />
+		{% for c in city %}
+		City: {{ c.city }}<br />
 		{% endfor %}
-		{% for l in lastname %}
-		Last Name: {{ l.lastname }}<br />
+		{% for s in State %}
+		State: {{ s.state }}<br />
 		{% endfor %}
-		{% for g in gender %}
-		Gender: {{ g.gender }}<br />
+		{% for t in team %}
+		Team: {{ t.team }}<br />
 		{% endfor %}
 		{% for a in age %}
 		Age: {{ a.age }}<br />
