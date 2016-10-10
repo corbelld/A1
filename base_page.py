@@ -61,7 +61,7 @@ class Dynamic(webapp2.RequestHandler):
 		self.template_values['state'] = [{'state':x.state,'key':x.key.urlsafe()} for x in db_defs.Profile.query(ancestor=ndb.Key(db_defs.Profile, self.app.config.get('default-group'))).fetch()]
 		self.template_values['team'] = [{'team':x.team,'key':x.key.urlsafe()} for x in db_defs.Profile.query(ancestor=ndb.Key(db_defs.Profile, self.app.config.get('default-group'))).fetch()]
 		self.template_values['age'] = [{'age':x.age,'key':x.key.urlsafe()} for x in db_defs.Profile.query(ancestor=ndb.Key(db_defs.Profile, self.app.config.get('default-group'))).fetch()]
-		self.template_values['afavor'] = [{'name':x.name,'key':x.key.urlsafe()} for x in db_defs.afavor.query(ancestor=ndb.Key(db_defs.afavor, self.app.config.get('default-group'))).fetch()]
+		self.template_values['afavor'] = [{'pokemon':x.pokemon,'key':x.key.urlsafe()} for x in db_defs.Afavor.query(ancestor=ndb.Key(db_defs.Afavor, self.app.config.get('default-group'))).fetch()]
 
 		template = JINJA_ENVIRONMENT.get_template('index.html')
 		self.response.write(template.render(self.template_values))
